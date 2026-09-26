@@ -14,28 +14,34 @@
         </header>
 
         <div class="add-video-section">
-            <h2>Add a Video</h2>
+            <h2>➕ Quick Add Video</h2>
             <form id="videoForm">
                 <div class="form-group">
-                    <label for="videoTitle">Video Title:</label>
-                    <input type="text" id="videoTitle" placeholder="Enter video title" required>
+                    <input type="text" id="videoTitle" placeholder="Video Title" required autofocus>
                 </div>
                 <div class="form-group">
-                    <label for="videoUrl">Video URL:</label>
-                    <input type="url" id="videoUrl" placeholder="https://youtube.com/watch?v=..." required>
+                    <input type="url" id="videoUrl" placeholder="Video URL (https://youtube.com/...)" required>
                 </div>
-                <div class="form-group">
-                    <label for="videoViews">View Count:</label>
-                    <input type="number" id="videoViews" placeholder="0" value="0" min="0" required>
+                <div class="form-group inline-group">
+                    <input type="number" id="videoViews" placeholder="Views" value="0" min="0" required>
+                    <button type="submit" class="btn-add">+ Add Video</button>
                 </div>
-                <button type="submit" class="btn-add">Add Video</button>
             </form>
+
+            <div class="quick-buttons">
+                <button class="quick-btn" onclick="quickAddVideo('Untitled Video', '', 0)">📝 Blank Video</button>
+                <button class="quick-btn" onclick="quickAddVideo('New Video', '', 100)">🎯 With 100 Views</button>
+                <button class="quick-btn" onclick="quickAddVideo('Viral Video', '', 1000)">🔥 With 1K Views</button>
+            </div>
         </div>
 
         <div class="videos-section">
-            <h2>Videos (Sorted by Views)</h2>
+            <div class="videos-header">
+                <h2>📊 Your Videos (Sorted by Views)</h2>
+                <span id="totalCount" class="total-count">0 videos</span>
+            </div>
             <div id="videosList" class="videos-list">
-                <p class="empty-message">No videos added yet. Add one to get started!</p>
+                <p class="empty-message">No videos added yet. Start tracking! 🚀</p>
             </div>
         </div>
     </div>
